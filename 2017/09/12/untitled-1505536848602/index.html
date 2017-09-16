@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yuchenxiao.github.io">
-  <title>Archives | XiaoChen</title>
+  <title>Java學習筆記-迴圈 | XiaoChen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="學無止境">
-<meta property="og:type" content="website">
-<meta property="og:title" content="XiaoChen">
-<meta property="og:url" content="https://yuchenxiao.github.io/archives/index.html">
+  <meta name="description" content="迴圈  if for do..while switch">
+<meta name="keywords" content="筆記">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java學習筆記-迴圈">
+<meta property="og:url" content="https://yuchenxiao.github.io/2017/09/12/untitled-1505536848602/index.html">
 <meta property="og:site_name" content="XiaoChen">
-<meta property="og:description" content="學無止境">
+<meta property="og:description" content="迴圈  if for do..while switch">
 <meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://i.imgur.com/G7JxHXy.jpg">
+<meta property="og:updated_time" content="2017-09-16T05:14:11.300Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XiaoChen">
-<meta name="twitter:description" content="學無止境">
+<meta name="twitter:title" content="Java學習筆記-迴圈">
+<meta name="twitter:description" content="迴圈  if for do..while switch">
+<meta name="twitter:image" content="https://i.imgur.com/G7JxHXy.jpg">
   
     <link rel="alternative" href="/atom.xml" title="XiaoChen" type="application/atom+xml">
   
@@ -157,36 +161,65 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-untitled-1505536848602" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/12/untitled-1505536848602/" class="archive-article-date">
-  	<time datetime="2017-09-12T04:40:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/12/untitled-1505536848602/">Java學習筆記-迴圈</a>
+    <h1 class="article-title" itemprop="name">
+      Java學習筆記-迴圈
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/09/12/untitled-1505536848602/" class="archive-article-date">
+  	<time datetime="2017-09-12T04:40:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>迴圈</strong></p>
+<ul>
+<li>if</li>
+<li>for</li>
+<li>do..while</li>
+<li>switch </li>
+</ul>
+<a id="more"></a>
+<p><img src="https://i.imgur.com/G7JxHXy.jpg" alt=""></p>
+<hr>
+<ul>
+<li>猜數字(有特定數字)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">public static void main(String[] args) &#123;</div><div class="line">     </div><div class="line">    int q;</div><div class="line">    Scanner scanner = new Scanner(System.in);</div><div class="line">    do</div><div class="line">    &#123;</div><div class="line">        System.out.println(&quot;猜猜一個數字:&quot;);</div><div class="line">        q = scanner.nextInt();</div><div class="line">    	if (q&gt;8) &#123;</div><div class="line">        	System.out.println(&quot;小一點&quot;);</div><div class="line">   	 	&#125; else if(q&lt;8) &#123;</div><div class="line">        	System.out.println(&quot;大一點&quot;);</div><div class="line">   	 	&#125; else &#123;</div><div class="line">        	System.out.println(&quot;答對了&quot;);</div><div class="line">    	&#125;</div><div class="line">    	//while 可以一直猜</div><div class="line">    &#125;while ( q != 8);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li>猜數字(隨機生產數字)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public static void main(String[] args) &#123;</div><div class="line">       int q;</div><div class="line">       int ans = (int)(Math.random() * 10);</div><div class="line">       Scanner scanner = new Scanner(System.in);</div><div class="line">       do &#123;</div><div class="line">           System.out.print(&quot;請輸入數字猜猜看:&quot;);        </div><div class="line">           q = scanner.nextInt();</div><div class="line">           if (q &gt; ans) &#123;</div><div class="line">               System.out.println(&quot;太大了&quot;);</div><div class="line">           &#125; else if (q &lt; ans) &#123;</div><div class="line">               System.out.println(&quot;太小了&quot;);</div><div class="line">           &#125; else &#123;</div><div class="line">               System.out.println(&quot;答對了&quot;);</div><div class="line">           &#125;    </div><div class="line">       &#125; while (q != ans);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li>for 迴圈了幾次</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">public static void main(String[] args) &#123;</div><div class="line">        int i;</div><div class="line">        int sun = 0;</div><div class="line">        int j;</div><div class="line">        System.out.println(&quot;請問你要加幾次&quot;);</div><div class="line">        Scanner scanner = new Scanner(System.in);</div><div class="line">        j = scanner.nextInt();</div><div class="line">       </div><div class="line">        for(i=1;i&lt;=j;i++) &#123;</div><div class="line">            sun = sun+i;</div><div class="line">        &#125;</div><div class="line">        System.out.println(&quot;1+2+3+4+...+&quot;+ j +&quot;=&quot;+sun);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>switch<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">package t091303;</div><div class="line">public class T091303 &#123;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">      int week ;</div><div class="line">      week = 2;</div><div class="line">      switch(week)&#123;</div><div class="line">          case 1:</div><div class="line">              System.out.println(&quot;星期一&quot;);</div><div class="line">              break;</div><div class="line">          case 2:</div><div class="line">              System.out.println(&quot;星期二&quot;);</div><div class="line">              break;</div><div class="line">          case 3:</div><div class="line">              System.out.println(&quot;星期三&quot;);</div><div class="line">              break;</div><div class="line">          case 4:</div><div class="line">              System.out.println(&quot;星期四&quot;);</div><div class="line">              break;</div><div class="line">          case 5:</div><div class="line">              System.out.println(&quot;星期五&quot;);</div><div class="line">              break;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>2017 / 09 / 12 </p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -198,7 +231,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -211,17 +244,94 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://yuchenxiao.github.io/2017/09/12/untitled-1505536848602/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -244,8 +354,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
