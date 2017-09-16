@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yuchenxiao.github.io">
-  <title>categories | XiaoChen</title>
+  <title>Java學習筆記-資料變數 | XiaoChen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="學無止境">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://yuchenxiao.github.io/categories/index.html">
+  <meta name="description" content="資料變數基本型態 Android Studio安裝">
+<meta name="keywords" content="筆記">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java學習筆記-資料變數">
+<meta property="og:url" content="https://yuchenxiao.github.io/2017/09/16/03/index.html">
 <meta property="og:site_name" content="XiaoChen">
-<meta property="og:description" content="學無止境">
+<meta property="og:description" content="資料變數基本型態 Android Studio安裝">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2017-09-16T06:10:50.221Z">
+<meta property="og:image" content="https://i.imgur.com/2harN7r.png">
+<meta property="og:image" content="https://i.imgur.com/HsihRwk.png">
+<meta property="og:updated_time" content="2017-09-16T07:37:46.554Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="學無止境">
+<meta name="twitter:title" content="Java學習筆記-資料變數">
+<meta name="twitter:description" content="資料變數基本型態 Android Studio安裝">
+<meta name="twitter:image" content="https://i.imgur.com/2harN7r.png">
   
     <link rel="alternative" href="/atom.xml" title="XiaoChen" type="application/atom+xml">
   
@@ -158,40 +162,140 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-03" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      categories
+      Java學習筆記-資料變數
     </h1>
   
 
         
-        <a href="/categories/index.html" class="archive-article-date">
-  	<time datetime="2017-09-16T06:08:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-16</time>
+        <a href="/2017/09/16/03/" class="archive-article-date">
+  	<time datetime="2017-09-16T07:08:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <div class="category-all-page">
           
+            <ul>
+<li>資料變數基本型態</li>
+<li>Android Studio安裝</li>
+</ul>
+<a id="more"></a>
+<p> 先安裝Java JDK 才可以跨平台</p>
+<p> IDE(整合開發環境)</p>
+<p>tiobe 網站  世界程式語言排行</p>
+<p>程式語言 Python  跟物聯網相關<br>     JavaScript 跟網頁有關</p>
+<p>程式語言的變數(variables) 可在程式執行時”暫存”所需資料(儲存在記憶體裡面)<br>              也可以重複使用            </p>
+<p>Java 缺點 要做分類  麻煩</p>
+<p>變數  數字   不須加引號<br>      文字類 須加雙引號(屬於字串 資料類型:String)    </p>
+<p>Java命名習慣<br>變數,方法:</p>
+<ol>
+<li>(不考慮底線)第1個單字全部字母小寫,若有兩個單字以上,第2個單字開始,每個單字首字母大寫 例: age, userName, englishBookPrice …</li>
+<li>(考慮底線)   _age, user_name, english_book_price</li>
+</ol>
+<p>變數依照宣告位置分成兩大類:</p>
+<ol>
+<li>區域變數:宣告在方法層級      如果宣告i 使用只能在同一房間使用 </li>
+<li>成員變數:宣告在類別層級</li>
+</ol>
+<p>類別,介面:不管幾個單字,每個單字首字母大寫<br>public class Demo 就是Demo類別<br>        例:Person, ComputerName</p>
+<p>套件:一律小寫   例:com.example</p>
+<p>常數:一律大寫,若有多個單字,可用底線隔開<br>        例:MATH_PI<br>Java Class -&gt; 類別(跟物件導向有關)</p>
+<p>= 指定 設定 符號<br>例:int i = 10 把10指定給i</p>
+<p>內建 變數名稱</p>
+<p>快速鍵  control+/   取消註解<br>變數的資料類型</p>
+<p>基本     </p>
+<ol>
+<li><p>數值</p>
+<ul>
+<li><p>整數資料       </p>
+<ol>
+<li>byte(1byte)</li>
+<li>short(2byte)</li>
+<li>int(4byte)</li>
+<li>long(8byte)</li>
+</ol>
+<ul>
+<li>浮點數資料<ol>
+<li>float(4byte)</li>
+<li>double(8byte)</li>
+</ol>
+</li>
+<li>布林資料<ol>
+<li>char  (true 1 / false 0)</li>
+</ol>
+</li>
+<li>字元資料<ol>
+<li>boolean</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>參考(參照)<ol>
+<li>物件 Object</li>
+<li>字串 String</li>
+<li>陣列 Type[]<br>(可運用前面所出現類型 加上中括號[])<br>字串 不可跟任何變數互轉(轉型)(像是字串轉整數)</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>寫個10 就會被當作int<br>寫個1.1 就會被當作double<br>條件運算<br>var1? var2: var3<br>10&gt;1?  5 : 19<br>顯示為5<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">例:		     相同意思  	  例:</div><div class="line">   <span class="keyword">boolean</span> b =<span class="literal">true</span>;			<span class="keyword">boolean</span> b =<span class="literal">true</span>;</div><div class="line">   <span class="keyword">int</span> i = b?1:<span class="number">0</span>;			<span class="keyword">int</span> i ;</div><div class="line">					<span class="keyword">if</span>(b)</div><div class="line">					  i=<span class="number">1</span>;</div><div class="line">					<span class="keyword">else</span></div><div class="line">					  i=<span class="number">0</span>;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">字串轉型成數值</div><div class="line">	String <span class="built_in">s1</span> = <span class="string">"1"</span><span class="comment">;</span></div><div class="line">	String <span class="built_in">s2</span> = <span class="string">"2"</span><span class="comment">;</span></div><div class="line">	int total = Integer.parseInt(<span class="built_in">s1</span>)+Integer.parseInt(<span class="built_in">s2</span>)<span class="comment">;</span></div></pre></td></tr></table></figure>
+<p>編寫Java程式  透過Javac  Compiler(編譯器) 翻譯成 機器語言(由0與1構成) 產生 .class 的檔案  JVM</p>
+<p>若要下載 Eclipse 程式 可選擇<br>Eclipse IDE for Java EE Developers<br>Eclipse IDE for Java Developers<br>若要下載 Android Studio  (現在 2.3.3)<br><a href="https://developer.android.com/index.html" target="_blank" rel="external">https://developer.android.com/index.html</a></p>
+<p>安裝Android Studio<br>選擇黑底白字<br>Android SDK Location: 選擇 C:\Users\305_09\Android_SDK</p>
+<p>設定工具路徑<br>右鍵 控制台 進階系統設定 環境變數<br>Path 編輯  加入 C:\Users\305_09\Android_SDK\platform-tools<br>檢驗 使用CMD  輸入 adb</p>
+<p>Package name:  是一個套件(需兩節 以.隔開 如com.example</p>
+<blockquote>
+<p>Layout 版面配置<br>sysout alt+/     =&gt;System.out.println();<br>i++        a+=b<br>i=i+1        a=a+b<br>sysout alt+/     =&gt;System.out.println();<br>i++        a+=b<br>i=i+1        a=a+b</p>
+</blockquote>
+<p>練習:</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">   import java.util.Scanner;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Demo</span> &#123;</div><div class="line"></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">	<span class="keyword">double</span> i,j,k;</div><div class="line">	Scanner scanner = <span class="keyword">new</span> Scanner(System.<span class="keyword">in</span>);</div><div class="line"></div><div class="line">	System.<span class="keyword">out</span>.print(<span class="string">"請輸入汽水的金額=&gt;"</span>);</div><div class="line">	i=scanner.nextDouble();</div><div class="line">	System.<span class="keyword">out</span>.println(<span class="string">"\t目前累計金額為 = "</span>+i);</div><div class="line">	</div><div class="line">	System.<span class="keyword">out</span>.print(<span class="string">"\n請輸入餅乾的金額=&gt;"</span>);</div><div class="line">	j=scanner.nextDouble();</div><div class="line">	System.<span class="keyword">out</span>.println(<span class="string">"\t目前累計金額為 = "</span>+(i+j));</div><div class="line">	</div><div class="line">	</div><div class="line">	System.<span class="keyword">out</span>.print(<span class="string">"\n請輸入御飯糰的金額=&gt;"</span>);</div><div class="line">	k=scanner.nextDouble();</div><div class="line">	System.<span class="keyword">out</span>.println(<span class="string">"\t\t總金額為  = "</span>+(i+j+k)+<span class="string">" 謝謝光臨!!!"</span>);</div><div class="line">&#125;&#125;</div></pre></td></tr></table></figure>
+<p>Android Studio</p>
+<p>工具列 選擇  AVD Manager<br>x86 Images  選擇有 (Google APIs)</p>
+<p>專安內容<br>可以刪除  .gradle  .idea  .build 以及 app裡的 build</p>
+<p>更改 Android Studio   選 File setting  Font  選擇 Save As…選擇 Consolas</p>
+<p>(<a href="https://i.imgur.com/mmciusj.png" target="_blank" rel="external">https://i.imgur.com/mmciusj.png</a>)<br><img src="https://i.imgur.com/2harN7r.png" alt=""><br><img src="https://i.imgur.com/HsihRwk.png" alt=""><br>模擬器環境設定</p>
+
           
-          <div class="category-all">
-          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li></ul>
-          </div>
-          
-        </div>
         
     </div>
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -241,7 +345,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://yuchenxiao.github.io/categories/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://yuchenxiao.github.io/2017/09/16/03/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -253,6 +357,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/13/02/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java學習筆記-迴圈練習</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -267,10 +381,33 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目錄，不存在…
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -293,7 +430,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
