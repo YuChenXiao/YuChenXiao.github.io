@@ -6,20 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yuchenxiao.github.io">
-  <title>Java學習筆記-封裝/import應用 | XiaoChen</title>
+  <title>android studio-BMI計算器實作一 | XiaoChen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="import可以在new中加入package名稱.class名稱即可 利用setXXX(變數)輸入值ex: setName(Nick);讀取為getXXX();便會印出Nick">
-<meta name="keywords" content="筆記">
+  <meta name="description" content="BMI計算器icon設定laout">
+<meta name="keywords" content="練習,實作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java學習筆記-封裝&#x2F;import應用">
-<meta property="og:url" content="https://yuchenxiao.github.io/2017/09/20/12/index.html">
+<meta property="og:title" content="android studio-BMI計算器實作一">
+<meta property="og:url" content="https://yuchenxiao.github.io/2017/09/24/14/index.html">
 <meta property="og:site_name" content="XiaoChen">
-<meta property="og:description" content="import可以在new中加入package名稱.class名稱即可 利用setXXX(變數)輸入值ex: setName(Nick);讀取為getXXX();便會印出Nick">
+<meta property="og:description" content="BMI計算器icon設定laout">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2017-09-20T15:35:49.637Z">
+<meta property="og:image" content="https://i.imgur.com/NV3nZEd.png">
+<meta property="og:image" content="https://i.imgur.com/THdDVKC.png">
+<meta property="og:image" content="https://i.imgur.com/eqeyV8e.png">
+<meta property="og:image" content="https://i.imgur.com/jTnQ51h.png">
+<meta property="og:image" content="https://i.imgur.com/VoHmBCy.png">
+<meta property="og:image" content="https://i.imgur.com/XYyaMoZ.png">
+<meta property="og:image" content="https://i.imgur.com/lHdmOQn.png">
+<meta property="og:image" content="https://i.imgur.com/g7miypR.png">
+<meta property="og:image" content="https://i.imgur.com/3TdC7tB.png">
+<meta property="og:updated_time" content="2017-09-24T14:25:39.199Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java學習筆記-封裝&#x2F;import應用">
-<meta name="twitter:description" content="import可以在new中加入package名稱.class名稱即可 利用setXXX(變數)輸入值ex: setName(Nick);讀取為getXXX();便會印出Nick">
+<meta name="twitter:title" content="android studio-BMI計算器實作一">
+<meta name="twitter:description" content="BMI計算器icon設定laout">
+<meta name="twitter:image" content="https://i.imgur.com/NV3nZEd.png">
   
     <link rel="alternative" href="/atom.xml" title="XiaoChen" type="application/atom+xml">
   
@@ -159,20 +169,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-12" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-14" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java學習筆記-封裝/import應用
+      android studio-BMI計算器實作一
     </h1>
   
 
         
-        <a href="/2017/09/20/12/" class="archive-article-date">
-  	<time datetime="2017-09-20T15:21:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-20</time>
+        <a href="/2017/09/24/14/" class="archive-article-date">
+  	<time datetime="2017-09-24T14:22:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
 </a>
         
       </header>
@@ -180,12 +190,38 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-            <ul>
-<li>import可以在new中加入package名稱.class名稱即可</li>
-<li>利用setXXX(變數)輸入值ex: setName(Nick);<br>讀取為getXXX();便會印出Nick<a id="more"></a>
-封裝 - 輸入狗的年齡超過20歲歸0,取出狗的年齡</li>
+            <p>BMI計算器<br>icon設定<br>laout<br><a id="more"></a></p>
+<h1 id="BMI計算器實作一"><a href="#BMI計算器實作一" class="headerlink" title="BMI計算器實作一"></a>BMI計算器實作一</h1><p>上一篇建了新專案BMI</p>
+<p>更改icon app在手機上所顯示得圖</p>
+<ul>
+<li><p>選擇你要得圖案按下複製<br><img src="https://i.imgur.com/NV3nZEd.png" alt=""></p>
+</li>
+<li><p>在android studio 的mipmap上按下貼上<br><img src="https://i.imgur.com/THdDVKC.png" alt=""></p>
+</li>
+<li>mipmap是用來存放app中使用的圖片<br>接下來到圖中得xml<br><img src="https://i.imgur.com/eqeyV8e.png" alt=""></li>
+<li>找出icon的位子<br><img src="https://i.imgur.com/jTnQ51h.png" alt=""></li>
+<li>在後面加上”@mipmap/圖片名稱”原有得刪掉<br><img src="https://i.imgur.com/VoHmBCy.png" alt=""></li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> T092006;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">T092006_1</span>  </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">    Dog.Dog_1 mypet = <span class="keyword">new</span> Dog.Dog_1(); <span class="comment">//可以在裡面import</span></div><div class="line">        mypet.setAge(<span class="number">20</span>);              <span class="comment">//給狗的年紀()</span></div><div class="line">    System.out.println(mypet.getAge());<span class="comment">//印出狗的年紀</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">----------------------------------------------------------</div><div class="line"><span class="keyword">package</span> Dog;</div><div class="line"><span class="keyword">import</span> jdk.nashorn.internal.ir.CatchNode;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dog_1</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;              <span class="comment">//封裝 不讓其他類別更改獲取得內容</span></div><div class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>  <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> a)</span>   <span class="comment">//setter</span></span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="keyword">if</span>(a&gt;<span class="number">20</span>)</div><div class="line">        &#123;</div><div class="line">            a=<span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">        age = a;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span>          <span class="comment">//getter</span></span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="keyword">return</span> age;              <span class="comment">//印出age</span></div><div class="line">    &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>allowBackup = Android屬性allowBackup安全風險源於adb backup容許任何一個能夠打開USB 調試開關的人從Android手機中複製應用數據到外設，一旦應用數據被備份之後，所有應用數據都可被用戶讀取。</li>
+<li>icon = app外觀圖示。</li>
+<li>label = app名稱。</li>
+<li>roundIcon = 属性指定一个图标，但只有你需要给应用设置一个特别的圓形圖标时才要用到這個属性。</li>
+<li>supportsRtl = RTL就是right-to-left 的縮寫的布局。<br>設置為true，targetSdkVersion設置為17或更高，各種RTL的API將被激活，系統使用您的應用程式可以顯示RTL布局。如果targetSdkVersion設置為16或更低的設置為false，RTL的API將被忽略或沒有影響您的應用程式將具有相同的行為無論對用戶現場的選擇相關的布局方向（你的布局會從左至右）。</li>
+<li>theme = 為主題,外觀的資訊稱為樣式(style),而將樣式套用在整個應用程式或單一畫面中，就稱為theme。</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>選擇laout &gt; activity_bmi.xml<br><img src="https://i.imgur.com/XYyaMoZ.png" alt=""></p>
+</li>
+<li><p>選擇Design版面建置<br><img src="https://i.imgur.com/lHdmOQn.png" alt=""></p>
+</li>
+<li>選擇laout &gt; Relativelaout<br><img src="https://i.imgur.com/g7miypR.png" alt=""></li>
+<li>將Relativelaout移入框框中</li>
+<li>新增文字 All &gt; Textview<br><img src="https://i.imgur.com/3TdC7tB.png" alt=""></li>
+<li>將Textview移入框框中</li>
+</ul>
 <blockquote>
 <p>2017 / 09 / </p>
 </blockquote>
@@ -201,7 +237,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">練習</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">實作</a>
         		</li>
       		
 		</ul>
@@ -213,7 +253,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
+        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
         		</li>
       		
 		</ul>
@@ -268,7 +308,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://yuchenxiao.github.io/2017/09/20/12/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://yuchenxiao.github.io/2017/09/24/14/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -282,18 +322,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/22/13/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          android studio-建立新專案&amp;模擬器
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/09/20/11/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java學習筆記-繼承/匿名物件/@Override</div>
+    <a href="/2017/09/22/13/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">android studio-建立新專案&amp;模擬器</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -320,7 +351,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目錄，不存在…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#BMI計算器實作一"><span class="toc-number">1.</span> <span class="toc-text">BMI計算器實作一</span></a></li></ol>
                     </div>
                 </span>
             </div>
