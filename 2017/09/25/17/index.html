@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yuchenxiao.github.io">
-  <title>tags | XiaoChen</title>
+  <title>Java學習筆記-二維陣列/繼承/抽象 | XiaoChen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="學無止境">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="https://yuchenxiao.github.io/tags/index.html">
+  <meta name="description" content="二維陣列ArrayList繼承抽象類別和抽象方法abstractstatic 累加方法">
+<meta name="keywords" content="筆記">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java學習筆記-二維陣列&#x2F;繼承&#x2F;抽象">
+<meta property="og:url" content="https://yuchenxiao.github.io/2017/09/25/17/index.html">
 <meta property="og:site_name" content="XiaoChen">
-<meta property="og:description" content="學無止境">
+<meta property="og:description" content="二維陣列ArrayList繼承抽象類別和抽象方法abstractstatic 累加方法">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2017-09-16T06:10:47.967Z">
+<meta property="og:image" content="https://i.imgur.com/3ClQqCe.jpg">
+<meta property="og:updated_time" content="2017-09-25T15:59:04.459Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="學無止境">
+<meta name="twitter:title" content="Java學習筆記-二維陣列&#x2F;繼承&#x2F;抽象">
+<meta name="twitter:description" content="二維陣列ArrayList繼承抽象類別和抽象方法abstractstatic 累加方法">
+<meta name="twitter:image" content="https://i.imgur.com/3ClQqCe.jpg">
   
     <link rel="alternative" href="/atom.xml" title="XiaoChen" type="application/atom+xml">
   
@@ -158,38 +161,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-17" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      tags
+      Java學習筆記-二維陣列/繼承/抽象
     </h1>
   
 
         
-        <a href="/tags/index.html" class="archive-article-date">
-  	<time datetime="2017-09-16T06:09:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-16</time>
+        <a href="/2017/09/25/17/" class="archive-article-date">
+  	<time datetime="2017-09-25T15:56:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <div class="tag-cloud">
           
-          <div class="tag-cloud-tags">
-          <a href="/tags/Android/" style="font-size: 18px; color: #8e8e8e">Android</a> <a href="/tags/實作/" style="font-size: 12px; color: #ccc">實作</a> <a href="/tags/筆記/" style="font-size: 30px; color: #111">筆記</a> <a href="/tags/練習/" style="font-size: 24px; color: #4f4f4f">練習</a>
-          </div>
-        </div>
+            <p>二維陣列<br>ArrayList<br>繼承<br>抽象類別和抽象方法abstract<br>static 累加方法<br><a id="more"></a></p>
+<p>二維陣列<br>ArrayList<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">package t092503;</div><div class="line">public class T092503 &#123;</div><div class="line"> public static void main(String[] args) &#123;</div><div class="line">  int [] [] i =new int [3] [];</div><div class="line">  i[0] = new int [2];</div><div class="line">  i[1] = new int [4];</div><div class="line">  i[2] = new int [3];</div><div class="line">  i[<span class="string">0</span>][<span class="symbol">1</span>] = 5;</div><div class="line">  System.out.println(i[<span class="string">0</span>][<span class="symbol">1</span>]);</div><div class="line"> &#125;</div><div class="line">&#125;</div><div class="line">狀況如下</div><div class="line">//     [<span class="string"></span>][<span class="symbol">0</span>]   [<span class="string"></span>][<span class="symbol">1</span>]  [<span class="string"></span>][<span class="symbol">2</span>]   [][3]</div><div class="line">//[０]    <span class="emphasis">__      _</span>５</div><div class="line">//[１]    <span class="strong">__      __</span>      <span class="strong">__     __</span></div><div class="line">//[２]    <span class="strong">__      __</span>　　　＿</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>ArrayList 二維陣列用法<br>Collections.sort() 由小排到大<br>FOR EACH<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> class T092504 &#123;</div><div class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">            <span class="comment">// ArrayList</span></div><div class="line">            ArrayList mylist = <span class="keyword">new</span>  ArrayList();</div><div class="line">            mylist.<span class="built_in">add</span>(<span class="number">3</span>);</div><div class="line">            mylist.<span class="built_in">add</span>(<span class="number">5</span>);</div><div class="line">            mylist.<span class="built_in">add</span>(<span class="number">6</span>);</div><div class="line">            mylist.<span class="built_in">add</span>(<span class="number">8</span>);<span class="comment">//Auto boxing轉換成物件</span></div><div class="line">            System.out.<span class="built_in">println</span>(mylist.<span class="built_in">get</span>(<span class="number">2</span>));</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">Object</span> obj : mylist)</div><div class="line">            &#123;</div><div class="line">                System.out.<span class="built_in">println</span>(obj);</div><div class="line">            &#125;</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"==="</span>);</div><div class="line">            <span class="comment">//刪除陣列中</span></div><div class="line">            mylist.remove(<span class="number">2</span>);             <span class="comment">//刪除[2]</span></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">Object</span> obj :  mylist)</div><div class="line">            &#123;</div><div class="line">                System.out.<span class="built_in">println</span>(<span class="string">"after remove:"</span> + obj);</div><div class="line">            &#125;</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"==="</span>);</div><div class="line">            <span class="comment">//Collections.sort() 由小排到大</span></div><div class="line">            Collections.<span class="built_in">sort</span>(mylist);</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">Object</span> obj:mylist)&#123;</div><div class="line">                System.out.<span class="built_in">println</span>(obj);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>Integer 和int的auto轉換<br><img src="https://i.imgur.com/3ClQqCe.jpg" alt=""></p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">T092505</span> &#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">            Integer obji = <span class="keyword">new</span> Integer(<span class="number">5</span>);</div><div class="line">            Integer objj = <span class="keyword">new</span> Integer(<span class="number">5</span>);</div><div class="line">            <span class="keyword">int</span> i = <span class="number">5</span>;</div><div class="line"></div><div class="line">            <span class="comment">//物件與物件比較會印出不同</span></div><div class="line">            <span class="keyword">if</span> (obji == objj)</div><div class="line">            &#123;</div><div class="line">                System.<span class="keyword">out</span>.println(<span class="string">"相同"</span>);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span></div><div class="line">            &#123;</div><div class="line">                System.<span class="keyword">out</span>.println(<span class="string">"不同"</span>);</div><div class="line">            &#125;</div><div class="line">            <span class="comment">//物件與數值比較 Integer會自動轉換成int Auto unboxing</span></div><div class="line">            <span class="keyword">if</span> (obji == i)</div><div class="line">            &#123;</div><div class="line">                System.<span class="keyword">out</span>.println(<span class="string">"obji, i 相同"</span>);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span></div><div class="line">            &#123;</div><div class="line">                System.<span class="keyword">out</span>.println(<span class="string">"obji, i 不同"</span>);</div><div class="line">            &#125;</div><div class="line">            objj = <span class="number">3</span> ; <span class="comment">//auto boxing</span></div><div class="line">            System.<span class="keyword">out</span>.println(objj);</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>繼承<br>抽象類別和抽象方法abstract<br>static 累加方法</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div></pre></td><td class="code"><pre><div class="line">主程式</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">T092507</span> &#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        Dog mypet = <span class="keyword">new</span> Dog();</div><div class="line">        mypet.run();</div><div class="line">        mypet.bark();</div><div class="line">        Mammal m;</div><div class="line">        m = mypet;</div><div class="line">        m.run();</div><div class="line">        Dog.showInfo();</div><div class="line"></div><div class="line">        <span class="comment">// m.bark(); 不行, Mammal 不具有 bark 方法</span></div><div class="line">        <span class="comment">// Mammal m1 = new Mammal();</span></div><div class="line">        <span class="comment">// mypet = m1; 不行，爸爸物件不能放進兒子變數</span></div><div class="line">        <span class="comment">// mypet = (Dog) m1; 無法強制轉型例外為</span></div><div class="line">        <span class="comment">// Dog yourpet ;**</span></div><div class="line">        <span class="comment">// yourpet = (Dog) m;**</span></div><div class="line">System.<span class="keyword">out</span>.println(Mammal.MammalNum);</div><div class="line">        Cat yourpet = <span class="keyword">new</span> Cat();</div><div class="line">        mypet.age = <span class="number">5</span>;</div><div class="line">        yourpet.age=<span class="number">3</span>;</div><div class="line">        pat(mypet);</div><div class="line">        pat(yourpet);</div><div class="line">    &#125;   <span class="comment">//因為Dog Cat都繼承了Mammal</span></div><div class="line">    <span class="function"><span class="keyword">static</span>  <span class="keyword">void</span>  <span class="title">pat</span>(<span class="params">Mammal m</span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        System.<span class="keyword">out</span>.println(m.age);</div><div class="line">         m.run();</div><div class="line">         m.say();</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">==========================================</div><div class="line"></div><div class="line">父類別MAMMAL</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//抽象類別abstract</span></div><div class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">Mammal</span> &#123;</div><div class="line">    <span class="keyword">int</span> age;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">run</span> (<span class="params"></span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"我在跑"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//抽象方法</span></div><div class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">say</span>(<span class="params"></span>)</span>;</div><div class="line">        <span class="keyword">static</span> <span class="keyword">int</span> MammalNum;  </div><div class="line">        <span class="comment">//加了static在記憶體裡只會有一份</span></div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="title">Mammal</span>(<span class="params"></span>)</span></div><div class="line"><span class="function">     </span>&#123;</div><div class="line">        <span class="comment">//有累加了效果</span></div><div class="line">         MammalNum++;  </div><div class="line">     &#125;</div><div class="line"><span class="comment">//抽象方法一定要在抽象類別裡面</span></div><div class="line"><span class="comment">//而抽象類別裡不一定要有抽象方法</span></div><div class="line"></div><div class="line"> &#125;</div><div class="line"> </div><div class="line"> ===========================================</div><div class="line"> </div><div class="line"> 子類別CAT</div><div class="line"> </div><div class="line"> </div><div class="line"> <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Cat</span> <span class="title">extends</span> <span class="title">Mammal</span> &#123;</div><div class="line">   <span class="comment">//重載父類別</span></div><div class="line">   @Override</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span>(<span class="params"></span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">       System.<span class="keyword">out</span>.println(<span class="string">"貓在睡"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//重載父類別</span></div><div class="line">    @Override   </div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">say</span>(<span class="params"></span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"哈囉我是貓咪"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">================================================</div><div class="line"></div><div class="line">子類別DOG</div><div class="line"></div><div class="line"><span class="comment">//繼承</span></div><div class="line"><span class="keyword">public</span>  <span class="keyword">class</span> <span class="title">Dog</span> <span class="title">extends</span> <span class="title">Mammal</span> &#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">bark</span>(<span class="params"></span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">    System.<span class="keyword">out</span>.println(<span class="string">"旺旺"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">showInfo</span> (<span class="params"></span>)             </span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"我是狗"</span>);</div><div class="line">    &#125;</div><div class="line">    @Override</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">say</span>(<span class="params"></span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"嗨!我是狗"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>2017 / 09 / </p>
+</blockquote>
+
+          
         
     </div>
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -239,7 +273,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://yuchenxiao.github.io/tags/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://yuchenxiao.github.io/2017/09/25/17/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -251,6 +285,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/25/16/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">BMI計算器實作三</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -265,10 +309,33 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目錄，不存在…
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -291,7 +358,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
