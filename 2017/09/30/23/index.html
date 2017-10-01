@@ -6,31 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yuchenxiao.github.io">
-  <title>Java學習筆記-android studio 安裝及SDK設定 | XiaoChen</title>
+  <title>23 | XiaoChen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="android studio程式安裝 android SDK">
-<meta name="keywords" content="筆記,練習">
+  <meta name="description" content="多重執行緒ThreadRunnableThread.sleep(500)延遲AtomicIntegerCMemberArrayListMapHashSet">
+<meta name="keywords" content="筆記">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java學習筆記-android studio 安裝及SDK設定">
-<meta property="og:url" content="https://yuchenxiao.github.io/2017/09/19/08/index.html">
+<meta property="og:title" content="23">
+<meta property="og:url" content="https://yuchenxiao.github.io/2017/09/30/23/index.html">
 <meta property="og:site_name" content="XiaoChen">
-<meta property="og:description" content="android studio程式安裝 android SDK">
+<meta property="og:description" content="多重執行緒ThreadRunnableThread.sleep(500)延遲AtomicIntegerCMemberArrayListMapHashSet">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="https://i.imgur.com/pai6Hbo.png">
-<meta property="og:image" content="https://i.imgur.com/moMv5Mw.png;https:">
-<meta property="og:image" content="https://i.imgur.com/OBlg2l5.jpg">
-<meta property="og:image" content="https://i.imgur.com/k5ZxoqI.png">
-<meta property="og:image" content="https://i.imgur.com/n351hyL.png">
-<meta property="og:image" content="https://i.imgur.com/yoZ44yz.png">
-<meta property="og:image" content="https://i.imgur.com/H7cvfYe.png">
-<meta property="og:image" content="https://i.imgur.com/AMI5XDp.jpg">
-<meta property="og:image" content="https://i.imgur.com/BOPZ6d8.png">
-<meta property="og:image" content="https://i.imgur.com/cbcr241.png">
-<meta property="og:updated_time" content="2017-09-19T14:13:45.451Z">
+<meta property="og:updated_time" content="2017-10-01T04:02:40.550Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java學習筆記-android studio 安裝及SDK設定">
-<meta name="twitter:description" content="android studio程式安裝 android SDK">
-<meta name="twitter:image" content="https://i.imgur.com/pai6Hbo.png">
+<meta name="twitter:title" content="23">
+<meta name="twitter:description" content="多重執行緒ThreadRunnableThread.sleep(500)延遲AtomicIntegerCMemberArrayListMapHashSet">
   
     <link rel="alternative" href="/atom.xml" title="XiaoChen" type="application/atom+xml">
   
@@ -170,20 +159,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-08" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-23" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java學習筆記-android studio 安裝及SDK設定
+      23
     </h1>
   
 
         
-        <a href="/2017/09/19/08/" class="archive-article-date">
-  	<time datetime="2017-09-19T14:58:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-19</time>
+        <a href="/2017/09/30/23/" class="archive-article-date">
+  	<time datetime="2017-09-30T03:53:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
 </a>
         
       </header>
@@ -191,31 +180,40 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-            <ul>
-<li>android studio程式安裝</li>
-<li><p>android SDK</p>
-<a id="more"></a>
-</li>
-<li><p><a href="https://developer.android.com/studio/index.html" target="_blank" rel="external">官網下載主程式</a><br><img src="https://i.imgur.com/pai6Hbo.png" alt=""></p>
-</li>
-<li><p><a href="https://www.alexclassroom.com/smartphone/android/directly-download-sdk-platform-tools-from-google/#.WcB46oyCw0M" target="_blank" rel="external">android SDK下載</a><br><img src="https://i.imgur.com/moMv5Mw.png;https:" alt=""></p>
-</li>
-<li><p>安裝</p>
-</li>
-</ul>
-<p><img src="https://i.imgur.com/OBlg2l5.jpg" alt="Smiley face" width="600"></p>
-<p><img src="https://i.imgur.com/k5ZxoqI.png" alt="Smiley face" width="600"></p>
-<p><img src="https://i.imgur.com/n351hyL.png" alt="Smiley face" width="600"></p>
-<p><img src="https://i.imgur.com/yoZ44yz.png" alt="Smiley face" width="600"></p>
+            <p>多重執行緒<br>Thread<br>Runnable<br>Thread.sleep(500)延遲<br>AtomicInteger<br>CMember<br>ArrayList<br>Map<br>HashSet<br><a id="more"></a><br>多重執行緒 t1,t2,t3,t4,t5同時執行,在Thread.sleep(1000)時會延遲1秒才會印出<br><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">T093001</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> void main(<span class="keyword">String</span>[] args) &#123;</div><div class="line"><span class="comment">//        int i;</span></div><div class="line">        MyThread t1 = <span class="keyword">new</span> <span class="type">MyThread</span>(<span class="string">"t1"</span>);</div><div class="line">        t1.start();</div><div class="line">        MyThread t2 = <span class="keyword">new</span> <span class="type">MyThread</span>(<span class="string">"t2"</span>);</div><div class="line">        t2.start();</div><div class="line">        MyThread t3 = <span class="keyword">new</span> <span class="type">MyThread</span>(<span class="string">"t3"</span>);</div><div class="line">        t3.start();</div><div class="line">        MyThread t4 = <span class="keyword">new</span> <span class="type">MyThread</span>(<span class="string">"t4"</span>);</div><div class="line">        t4.start();</div><div class="line">        MyThread t5 = <span class="keyword">new</span> <span class="type">MyThread</span>(<span class="string">"t5"</span>);</div><div class="line">        t5.start();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">   <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword"><span class="keyword">extends</span> <span class="type">Thread</span></span> </span>&#123;</div><div class="line">    <span class="keyword">String</span> tag;</div><div class="line">    MyThread(<span class="keyword">String</span> tag)&#123;</div><div class="line">    <span class="built_in">this</span>.tag = tag;</div><div class="line">    &#125;</div><div class="line">        @Override</div><div class="line">        <span class="keyword">public</span> void run() &#123;</div><div class="line">            int j;</div><div class="line">            <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt;= <span class="number">5</span>; j++) &#123;</div><div class="line">                System.out.println(tag + <span class="string">":"</span> + j);</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    Thread.sleep(<span class="number">1000</span>);</div><div class="line">                    <span class="comment">//catch 放著遇到錯誤 該怎麼處理</span></div><div class="line">                &#125; <span class="keyword">catch</span> (InterruptedException ex) &#123;</div><div class="line">                    Logger.getLogger(T093001.class.getName()).log(Level.SEVERE, <span class="literal">null</span>, ex);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
 <ul>
-<li>下面路徑更改至SDK資料夾</li>
+<li>類別只能繼承一個類別如果該類別有繼承了類別就要使用 implements Runnable 來使用。</li>
+<li>Thread 多重執行續</li>
+<li><p>Runnable 要跑很多地方最後才是要跑多重執行續</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">T093002</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        MyObj obj= <span class="keyword">new</span> MyObj();</div><div class="line">        Thread t = <span class="keyword">new</span> Thread(obj);</div><div class="line">        t.start();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyObj</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> i;</div><div class="line">        String tag = <span class="string">"i"</span>;</div><div class="line">        <span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)</div><div class="line">        &#123;</div><div class="line">            System.out.println(tag + <span class="string">":"</span> + i);</div><div class="line">            <span class="keyword">try</span> &#123;Thread.sleep(<span class="number">500</span>);&#125;</div><div class="line">            <span class="keyword">catch</span> (InterruptedException ex) </div><div class="line">            &#123;</div><div class="line">            Logger.getLogger(MyObj.class.getName()).log(Level.SEVERE, <span class="keyword">null</span>, ex);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Thread 執行緒  在Thread.sleep(500)延遲0.5秒</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">       <span class="keyword">new</span> Thread()&#123;</div><div class="line">           @Override</div><div class="line">           <span class="keyword">public</span> <span class="keyword">void</span> run()</div><div class="line">           &#123;</div><div class="line">               <span class="built_in">int</span> i;</div><div class="line">               <span class="keyword">String</span> tag = <span class="string">"i"</span>;</div><div class="line">               <span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)</div><div class="line">               &#123;</div><div class="line">                   System.out.<span class="built_in">println</span>(tag + <span class="string">":"</span> + i);</div><div class="line">                   <span class="keyword">try</span> &#123;</div><div class="line">                       Thread.sleep(<span class="number">500</span>);</div><div class="line">                   &#125; <span class="keyword">catch</span> (InterruptedException ex) &#123;</div><div class="line">                       Logger.getLogger(T093003.class.getName()).<span class="built_in">log</span>(Level.SEVERE, <span class="keyword">null</span>, ex);</div><div class="line">                   &#125;</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">       &#125;.start();</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<p><img src="https://i.imgur.com/H7cvfYe.png" alt="Smiley face" width="600"></p>
-<p><img src="https://i.imgur.com/AMI5XDp.jpg" alt="Smiley face" width="600"></p>
-<p><img src="https://i.imgur.com/BOPZ6d8.png" alt="Smiley face" width="600"></p>
-<p><img src="https://i.imgur.com/cbcr241.png" alt="Smiley face" width="600"></p>
+<p>AtomicInteger使用之後，不需要加鎖，也可以實現線程安全。<br>在java api搜尋concurre裡面的都屬於安全執行緒<br>而使用AtomicInteger會讓程式碼一個一個排好隊執行<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">T093005</span> </span>&#123;</div><div class="line">    <span class="comment">//static AtomicInteger sum = new AtomicInteger();</span></div><div class="line">    <span class="comment">//thread-safe     concurre執行續安全</span></div><div class="line">    <span class="keyword">static</span> AtomicInteger <span class="keyword">sum</span> = <span class="keyword">new</span> AtomicInteger();</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</div><div class="line"></div><div class="line">        MyThread1 t1 = <span class="keyword">new</span> MyThread1();</div><div class="line">        t1.start();</div><div class="line">        MyThread1 t2 = <span class="keyword">new</span> MyThread1();</div><div class="line">        t2.start();</div><div class="line">        MyThread1 t3 = <span class="keyword">new</span> MyThread1();</div><div class="line">        t3.start();</div><div class="line">        <span class="comment">//Thread.sleep(500)延遲0.5秒</span></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            Thread.sleep(<span class="number">5000</span>);</div><div class="line">        &#125; <span class="keyword">catch</span> (InterruptedException ex) &#123;</div><div class="line">            Logger.getLogger(T093005.class.getName()).log(Level.SEVERE, <span class="keyword">null</span>, ex);</div><div class="line">        &#125;</div><div class="line">        System.out.println(<span class="keyword">sum</span>);</div><div class="line">    &#125;</div><div class="line"><span class="comment">// 加上synchronized 可以讓T1T2T3排隊執行      P5-18</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread1</span> <span class="keyword">extends</span> <span class="title">Thread</span></span></div><div class="line"><span class="class"></span>&#123;</div><div class="line">    @Override</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> run()</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> i;</div><div class="line">        <span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=<span class="number">10000</span>;i++)</div><div class="line">        &#123;   <span class="comment">//incrementAndGet()有++的效果</span></div><div class="line">            T093005.<span class="keyword">sum</span>.incrementAndGet();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>泛型式java用來將程式碼簡潔化的技術，在CMember&lt;&gt;中輸入型態ex integer,double等等下面的value才是那個型態。</li>
+<li>下面CMember類別號面加了<t>為通用型態type。如果資料成員是id型態是字串則下面的可用<br>CMember<string> 變數 = new CMember<string>();</string></string></t></li>
+</ul>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> static void main(String[] args) &#123;</div><div class="line">        CMember&lt;<span class="keyword">Integer</span>&gt; c = new CMember();</div><div class="line">        c.<span class="keyword">value</span> = <span class="number">5</span>;</div><div class="line">        System.<span class="keyword">out</span>.println(c.<span class="keyword">value</span>);</div><div class="line">        CMember&lt;<span class="keyword">Double</span>&gt; d = new CMember();</div><div class="line">        d.<span class="keyword">value</span> = <span class="number">2.5</span>;</div><div class="line">        System.<span class="keyword">out</span>.println(d.<span class="keyword">value</span>);</div><div class="line">    &#125;</div><div class="line">&#125;  // 建議使用T T <span class="keyword">type</span> E element K key V <span class="keyword">value</span></div><div class="line"><span class="keyword">class</span> CMember&lt;T&gt;</div><div class="line">&#123;</div><div class="line">    T <span class="keyword">value</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>ArrayList類別是實作list介面。<br>ArrayList物件可以看成動態陣列，可以自行調整陣列大小。<br>如果ArrayList後面未加&lt;型態&gt;<br>而下面.add()中被視為Obj物件<br>若要轉型則要 int a = (Integer)mylist.get(0)<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">        ArrayList mylist = <span class="keyword">new</span> ArrayList();</div><div class="line">        mylist.<span class="keyword">add</span>(<span class="number">5</span>);     <span class="comment">// 擺在裡面的是物件OBJ</span></div><div class="line">        mylist.<span class="keyword">add</span>(<span class="number">0.5</span>);</div><div class="line">        System.<span class="keyword">out</span>.println(mylist.<span class="keyword">get</span>(<span class="number">0</span>));</div><div class="line">        System.<span class="keyword">out</span>.println(mylist.<span class="keyword">get</span>(<span class="number">1</span>));</div><div class="line">        <span class="keyword">int</span> a = (Integer)mylist.<span class="keyword">get</span>(<span class="number">0</span>);</div><div class="line">        <span class="keyword">double</span> b = (Double) mylist.<span class="keyword">get</span>(<span class="number">1</span>);</div><div class="line">        System.<span class="keyword">out</span>.println(a);</div><div class="line">        System.<span class="keyword">out</span>.println(b);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>ArrayLis後面加了<integer>型態</integer></li>
+</ul>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">        <span class="comment">//泛型在new裡就跟他說是Integer  所以下面add(int) obj只有規定時</span></div><div class="line">        ArrayList&lt;Integer&gt;mylist = <span class="keyword">new</span> ArrayList();</div><div class="line">        mylist.<span class="keyword">add</span>(<span class="number">5</span>);</div><div class="line">        System.<span class="keyword">out</span>.println(mylist.<span class="keyword">add</span>(<span class="number">0</span>));</div><div class="line">        <span class="keyword">int</span> a = mylist.<span class="keyword">get</span>(<span class="number">0</span>);</div><div class="line">        System.<span class="keyword">out</span>.println(a);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>ArrayList<student>宣告Student類別，所以下面可以直接套用<br>Student()中的型態</student></p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">        ArrayList&lt;Student&gt;student = <span class="keyword">new</span> ArrayList();</div><div class="line">        student.<span class="keyword">add</span>(<span class="keyword">new</span> Student(<span class="string">"Bob"</span>, <span class="number">95</span>));</div><div class="line">        student.<span class="keyword">add</span>(<span class="keyword">new</span> Student(<span class="string">"nick"</span>, <span class="number">90</span>));</div><div class="line">        <span class="keyword">for</span> (Student s : student)</div><div class="line">        &#123;</div><div class="line">            System.<span class="keyword">out</span>.println(s);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"><span class="keyword">class</span> <span class="title">Student</span>&#123;</div><div class="line">    <span class="keyword">int</span> score;</div><div class="line">    String name;</div><div class="line">    Student(String name,<span class="keyword">int</span> score)</div><div class="line">    &#123;</div><div class="line">            <span class="keyword">this</span>.name=name;</div><div class="line">            <span class="keyword">this</span>.score=score;</div><div class="line">    &#125;</div><div class="line">    @Override</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name+<span class="string">","</span>+<span class="keyword">this</span>.score;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>HashSet集合類別 不可重複性<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">        <span class="comment">//HashSet集合 不可重複性</span></div><div class="line">        HashSet &lt;Integer&gt; myset = <span class="keyword">new</span> HashSet();</div><div class="line">        myset.<span class="keyword">add</span>(<span class="number">4</span>);</div><div class="line">        myset.<span class="keyword">add</span>(<span class="number">5</span>);</div><div class="line">        myset.<span class="keyword">add</span>(<span class="number">1</span>);</div><div class="line">        myset.<span class="keyword">add</span>(<span class="number">7</span>);</div><div class="line">        myset.<span class="keyword">add</span>(<span class="number">2</span>);</div><div class="line">        myset.<span class="keyword">add</span>(<span class="number">2</span>);  <span class="comment">//不會出現</span></div><div class="line"></div><div class="line">        <span class="keyword">for</span> (Integer i : myset)</div><div class="line">        &#123;</div><div class="line">            System.<span class="keyword">out</span>.println(i);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">印出為</div><div class="line"><span class="number">1</span></div><div class="line"><span class="number">2</span></div><div class="line"><span class="number">4</span></div><div class="line"><span class="number">5</span></div><div class="line"><span class="number">7</span></div></pre></td></tr></table></figure></p>
+<p>因不可重複性所以2會被刪除看不到</p>
+<hr>
+<ul>
+<li>Map介面是一個獨立架構的介面，和set和list不同的是,map要用關鍵值key儲存，關鍵值會對應指定資料<k,v>表示，對應值(value)<br>ex身分證是關鍵值 本人是對應值<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">        <span class="comment">//&lt;k,v&gt;k為鍵值   v為值</span></div><div class="line">    Map &lt;Integer,<span class="keyword">String</span>&gt; students = <span class="keyword">new</span> HashMap();</div><div class="line">    students.<span class="built_in">put</span>(<span class="number">1</span>,<span class="string">"Bob"</span>);</div><div class="line">    students.<span class="built_in">put</span>(<span class="number">2</span>,<span class="string">"Nick"</span>);</div><div class="line">    students.<span class="built_in">put</span>(<span class="number">3</span>,<span class="string">"Joy"</span>);</div><div class="line">    students.<span class="built_in">put</span>(<span class="number">4</span>,<span class="string">"Lin"</span>);</div><div class="line">    students.<span class="built_in">put</span>(<span class="number">5</span>,<span class="string">"Mary"</span>);</div><div class="line"></div><div class="line">    <span class="keyword">String</span> s = students.<span class="built_in">get</span>(<span class="number">1</span>);</div><div class="line">    System.out.<span class="built_in">println</span>(s);</div><div class="line">    &#125;</div><div class="line">    印出</div><div class="line">    Bob</div></pre></td></tr></table></figure>
+</k,v></li>
+</ul>
+<p>下面用了以上3種ArrayList/HashMap/Map<br>前面用了集合和Map後面則是用ArrayList宣告2組資料<br>再用FOR-each()加了Map<br>用關鍵值來取得對應值<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">        <span class="keyword">HashMap</span>&lt;<span class="keyword">String</span>,<span class="keyword">String</span>&gt;m1 = <span class="keyword">new</span> <span class="keyword">HashMap</span>();</div><div class="line">        m1.put(<span class="string">"city"</span>,<span class="string">"台北"</span>);</div><div class="line">        m1.put(<span class="string">"code"</span>,<span class="string">"02"</span>);</div><div class="line">        <span class="keyword">HashMap</span>&lt;<span class="keyword">String</span>,<span class="keyword">String</span>&gt;m2 = <span class="keyword">new</span> <span class="keyword">HashMap</span>();</div><div class="line">        m2.put(<span class="string">"city"</span>,<span class="string">"台中"</span>);</div><div class="line">        m2.put(<span class="string">"code"</span>,<span class="string">"04"</span>);</div><div class="line"></div><div class="line"></div><div class="line">        ArrayList&lt;Map&lt;<span class="keyword">String</span>,<span class="keyword">String</span>&gt;&gt; mylist = <span class="keyword">new</span> ArrayList();</div><div class="line">        mylist.<span class="built_in">add</span>(m1);</div><div class="line">        mylist.<span class="built_in">add</span>(m2);</div><div class="line">        <span class="keyword">for</span> (Map&lt;<span class="keyword">String</span>,<span class="keyword">String</span>&gt;m: mylist)</div><div class="line">        &#123;</div><div class="line">            System.out.<span class="built_in">println</span>(m.<span class="built_in">get</span>(<span class="string">"city"</span>)+<span class="string">","</span>+m.<span class="built_in">get</span>(<span class="string">"code"</span>));</div><div class="line">        &#125;</div><div class="line">     &#125;</div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>2017 / 09 / 19</p>
+<p>2017 / 09 / 30</p>
 </blockquote>
 
           
@@ -231,10 +229,6 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">練習</a>
-        		</li>
       		
 		</ul>
 	</div>
@@ -245,7 +239,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
+        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
@@ -300,7 +294,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://yuchenxiao.github.io/2017/09/19/08/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://yuchenxiao.github.io/2017/09/30/23/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -314,18 +308,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/20/09/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java學習筆記-String &amp; 字串池
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/09/18/07/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java學習筆記-陣列</div>
+    <a href="/2017/09/29/21/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HTML表單選項語法</div>
       <i class="icon-circle-right"></i>
     </a>
   
