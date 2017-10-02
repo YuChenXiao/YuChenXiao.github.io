@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yuchenxiao.github.io">
-  <title>Archives: 2017/9 | XiaoChen</title>
+  <title>24 | XiaoChen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="學無止境">
-<meta property="og:type" content="website">
-<meta property="og:title" content="XiaoChen">
-<meta property="og:url" content="https://yuchenxiao.github.io/archives/2017/09/index.html">
+  <meta name="description" content="FileReader 讀取檔案內容FileWriter 將資料寫入檔案BufferedReader  從緩衝區讀取資料BufferedWriter  將資料寫入緩衝區StringBuilder  建立字串">
+<meta name="keywords" content="筆記">
+<meta property="og:type" content="article">
+<meta property="og:title" content="24">
+<meta property="og:url" content="https://yuchenxiao.github.io/2017/10/02/24/index.html">
 <meta property="og:site_name" content="XiaoChen">
-<meta property="og:description" content="學無止境">
+<meta property="og:description" content="FileReader 讀取檔案內容FileWriter 將資料寫入檔案BufferedReader  從緩衝區讀取資料BufferedWriter  將資料寫入緩衝區StringBuilder  建立字串">
 <meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2017-10-02T13:28:16.010Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XiaoChen">
-<meta name="twitter:description" content="學無止境">
+<meta name="twitter:title" content="24">
+<meta name="twitter:description" content="FileReader 讀取檔案內容FileWriter 將資料寫入檔案BufferedReader  從緩衝區讀取資料BufferedWriter  將資料寫入緩衝區StringBuilder  建立字串">
   
     <link rel="alternative" href="/atom.xml" title="XiaoChen" type="application/atom+xml">
   
@@ -157,36 +159,75 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-24" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      24
+    </h1>
+  
+
+        
+        <a href="/2017/10/02/24/" class="archive-article-date">
+  	<time datetime="2017-10-02T13:26:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-02</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+            <p>FileReader 讀取檔案內容<br>FileWriter 將資料寫入檔案<br>BufferedReader  從緩衝區讀取資料<br>BufferedWriter  將資料寫入緩衝區<br>StringBuilder  建立字串<br><a id="more"></a></p>
+<ul>
+<li>FileReader 讀取   (須先建立資料夾以及txt文字檔要有字)</li>
+</ul>
+<ul>
+<li>範例1</li>
+</ul>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">                                <span class="comment">//IOE 讓系統捕捉意外</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args)<span class="keyword">throws</span> IOException &#123;      </div><div class="line">          <span class="comment">//字元數為100</span></div><div class="line"><span class="built_in">char</span> ch[] = <span class="keyword">new</span> <span class="built_in">char</span>[<span class="number">100</span>];</div><div class="line">                       <span class="comment">//資料路徑</span></div><div class="line">        FileReader fr = <span class="keyword">new</span> FileReader(<span class="string">"C:\\test\\t3.txt"</span>);</div><div class="line">    <span class="comment">//讀入的字元放入字元陣列data，read會回傳讀入的字元數</span></div><div class="line">        fr.read(ch);</div><div class="line">                  <span class="comment">//將陣列轉換為字串</span></div><div class="line">        <span class="keyword">String</span> <span class="built_in">str</span> = <span class="keyword">new</span> <span class="keyword">String</span>(ch);</div><div class="line">        System.out.<span class="built_in">println</span>(<span class="built_in">str</span>);</div><div class="line">        fr.close();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>範例2//自行新增的文字檔要存取為UTF8才可以讀取到中文<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) <span class="keyword">throws</span> IOException &#123;</div><div class="line">        </div><div class="line">        <span class="built_in">char</span> data[] = <span class="keyword">new</span> <span class="built_in">char</span>[<span class="number">100</span>];</div><div class="line">        FileReader fr = <span class="keyword">new</span> FileReader(<span class="string">"C:\\Java\\train.txt"</span>);</div><div class="line">        <span class="comment">//.read()</span></div><div class="line">        <span class="built_in">int</span> num = fr.read(data);</div><div class="line">                       <span class="comment">//將陣列轉換為字串</span></div><div class="line">        <span class="keyword">String</span> <span class="built_in">str</span> = <span class="keyword">new</span> <span class="keyword">String</span>(data,<span class="number">0</span>,num);</div><div class="line">        System.out.<span class="built_in">println</span>(<span class="string">"Characters read="</span> +num);</div><div class="line">        System.out.<span class="built_in">println</span>(<span class="built_in">str</span>);</div><div class="line">        fr.close();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>FileWriter 寫入     (須先建立資料夾以及txt空白文字檔)</li>
+</ul>
+<ul>
+<li>範例1</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args)throws IOException &#123;</div><div class="line"></div><div class="line">        FileWriter fw = <span class="keyword">new</span> FileWriter(<span class="string">"C:\\test\\t1.txt"</span>);</div><div class="line">        <span class="comment">//字元 陣列</span></div><div class="line">        <span class="keyword">char</span> data [] =  &#123;<span class="string">'嗨'</span>,<span class="string">'你'</span>,<span class="string">'好'</span>,<span class="string">'阿'</span>,<span class="string">'O'</span>&#125;;</div><div class="line">        <span class="comment">//寫入文字檔data</span></div><div class="line">        fw.<span class="built_in">write</span>(data);</div><div class="line">        fw.<span class="built_in">write</span>(<span class="string">"Test1"</span>);</div><div class="line">        fw.<span class="built_in">close</span>();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>FileInputStream 處理位元組(bytes)的輸入工作</li>
+<li>BufferedReader 從緩衝區讀取資料</li>
+</ul>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) <span class="keyword">throws</span> FileNotFoundException, IOException &#123;</div><div class="line">            <span class="comment">//把檔案存放fis</span></div><div class="line">            FileInputStream fis = <span class="keyword">new</span> FileInputStream(<span class="string">"C:\\test\\t2.txt"</span>);</div><div class="line">            <span class="comment">//讀取再用big5來讀取fis</span></div><div class="line">            InputStreamReader isr = <span class="keyword">new</span> InputStreamReader(fis, <span class="string">"Big5"</span>);</div><div class="line">            <span class="comment">//緩衝區 將isr放入放isr緩衝區</span></div><div class="line">            <span class="keyword">BufferedReader</span> br = <span class="keyword">new</span> <span class="keyword">BufferedReader</span>(isr);</div><div class="line">            System.out.<span class="built_in">println</span>(br.readLine());</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>讀取多行的方法</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args)throws FileNotFoundException,UnsupportedEncodingException,IOException &#123;</div><div class="line">        <span class="comment">//讀取多行的方法</span></div><div class="line">        <span class="keyword">char</span> ch[] = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">100</span>];</div><div class="line">        <span class="keyword">int</span> len = <span class="number">0</span>;</div><div class="line">        建立字串</div><div class="line">        StringBuilder sb =<span class="keyword">new</span> StringBuilder();</div><div class="line">        FileReader fr = <span class="keyword">new</span> FileReader(<span class="string">"C:\\test\\t3.txt"</span>);</div><div class="line">        <span class="comment">//.read()讀取時會記下裡面的長度 再用長度去寫入</span></div><div class="line">        <span class="built_in">while</span> ((len = fr.<span class="built_in">read</span>(ch))&gt;<span class="number">0</span>)</div><div class="line">        &#123;       <span class="comment">//添加      //將陣列轉換為字串</span></div><div class="line">            sb.append(<span class="keyword">new</span> <span class="keyword">String</span>(ch, <span class="number">0</span>, len));</div><div class="line">        &#125;</div><div class="line">        System.out.<span class="built_in">println</span>(sb);</div><div class="line">        fr.<span class="built_in">close</span>();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>BufferedReader 從緩衝區讀取資料</li>
+<li>StringBuilder 建立字串</li>
+</ul>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) <span class="keyword">throws</span> FileNotFoundException, IOException</div><div class="line">        &#123;</div><div class="line">            <span class="comment">//把檔案存放fis</span></div><div class="line">            FileInputStream fis = <span class="keyword">new</span> FileInputStream(<span class="string">"C:\\test\\t3.txt"</span>);</div><div class="line">            <span class="comment">//讀取再用big5來讀取fis</span></div><div class="line">            InputStreamReader isr = <span class="keyword">new</span> InputStreamReader(fis, <span class="string">"Big5"</span>);</div><div class="line">            <span class="comment">//緩衝區 將isr放入放isr緩衝區</span></div><div class="line">            <span class="keyword">BufferedReader</span> br = <span class="keyword">new</span> <span class="keyword">BufferedReader</span>(isr);</div><div class="line">            <span class="keyword">String</span> <span class="built_in">str</span>;</div><div class="line">            <span class="comment">//建立字串</span></div><div class="line">            StringBuilder sb =<span class="keyword">new</span> StringBuilder();</div><div class="line">                <span class="comment">// 字串等於緩衝區的文件不等於0的時候跑裡面</span></div><div class="line">            <span class="keyword">while</span> ((<span class="built_in">str</span>=br.readLine())!= <span class="keyword">null</span>)</div><div class="line">            &#123;</div><div class="line">                <span class="comment">//sb</span></div><div class="line">                sb.<span class="built_in">append</span>(<span class="built_in">str</span>);</div><div class="line">                sb.<span class="built_in">append</span>(<span class="string">"\n"</span>);</div><div class="line">            &#125;</div><div class="line">            System.out.<span class="built_in">println</span>(sb);</div><div class="line">        &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>BufferedWriter從資料寫入緩衝區</li>
+<li>FileWriter 從資料寫入文件</li>
+</ul>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args)<span class="keyword">throws</span> IOException &#123;</div><div class="line">        <span class="comment">//scanner 使用者寫</span></div><div class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">        <span class="comment">//從資料寫入文件</span></div><div class="line">        FileWriter fw = <span class="keyword">new</span> FileWriter(<span class="string">"C:\\test\\t1.txt"</span>);</div><div class="line">        <span class="comment">//fw 檔案路徑放入 bw 緩衝區</span></div><div class="line">        BufferedWriter bw = <span class="keyword">new</span> BufferedWriter(fw);</div><div class="line">        <span class="keyword">String</span> <span class="built_in">str</span>;</div><div class="line">        do &#123;</div><div class="line">            <span class="comment">//把輸入為字串</span></div><div class="line">            <span class="built_in">str</span> = sc.nextLine();</div><div class="line">            <span class="comment">//把輸入的文字放進緩衝區每句後面加上\r\n windows換行</span></div><div class="line">            bw.write(<span class="built_in">str</span> + <span class="string">"\r\n"</span> );</div><div class="line">            <span class="comment">//如果輸出長度大0就讓你繼續輸入 如果空白就輸出</span></div><div class="line">        &#125;<span class="keyword">while</span> (<span class="built_in">str</span>.<span class="built_in">trim</span>().length() &gt; <span class="number">0</span>);</div><div class="line"></div><div class="line">        bw.close();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>2017 / 10 / 02</p>
+</blockquote>
+
+          
+        
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/30/23/" class="archive-article-date">
-  	<time datetime="2017-09-30T03:53:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/30/23/">Java學習筆記-多重執行緒</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -194,15 +235,11 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">練習</a>
-        		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -215,489 +252,116 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://yuchenxiao.github.io/2017/10/02/24/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/29/21/" class="archive-article-date">
-  	<time datetime="2017-09-29T12:40:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-29</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/30/23/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java學習筆記-多重執行緒</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/29/21/">HTML表單選項語法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">練習</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/HTML//" class="article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目錄，不存在…
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/28/22/" class="archive-article-date">
-  	<time datetime="2017-09-28T12:55:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/28/22/">Android studio習題</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/27/20/" class="archive-article-date">
-  	<time datetime="2017-09-27T13:44:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/27/20/">Android studio 錯誤問題 和 解決方式</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/27/19/" class="archive-article-date">
-  	<time datetime="2017-09-27T13:40:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/27/19/">BMI計算機重整(全)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">UI</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/26/18/" class="archive-article-date">
-  	<time datetime="2017-09-26T15:25:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/26/18/">Java學習筆記-陣列排序/比較類別/例外處裡類別/匿名內部類別</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/25/17/" class="archive-article-date">
-  	<time datetime="2017-09-25T15:56:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/25/17/">Java學習筆記-二維陣列/繼承/抽象</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/25/16/" class="archive-article-date">
-  	<time datetime="2017-09-25T14:38:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/25/16/">BMI計算器實作三</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">練習</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/25/15/" class="archive-article-date">
-  	<time datetime="2017-09-25T13:41:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/25/15/">BMI計算器實作二</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">練習</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/24/14/" class="archive-article-date">
-  	<time datetime="2017-09-24T14:22:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/24/14/">android studio-BMI計算器實作一</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">練習</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">實作</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2017/09/page/2/">2</a><a class="page-number" href="/archives/2017/09/page/3/">3</a><a class="extend next" rel="next" href="/archives/2017/09/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -721,8 +385,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
