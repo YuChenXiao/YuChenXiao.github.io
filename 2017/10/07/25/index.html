@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yuchenxiao.github.io">
-  <title>Archives | XiaoChen</title>
+  <title>Java學習筆記-C控制字元使用&amp;寫入文字檔 | XiaoChen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="學無止境">
-<meta property="og:type" content="website">
-<meta property="og:title" content="XiaoChen">
-<meta property="og:url" content="https://yuchenxiao.github.io/archives/page/3/index.html">
+  <meta name="description" content="C語言控制字元使用FileWriter寫入路徑設定BufferedWriter 寫入緩存區StringBuilder 字串">
+<meta name="keywords" content="筆記">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java學習筆記-C控制字元使用&amp;寫入文字檔">
+<meta property="og:url" content="https://yuchenxiao.github.io/2017/10/07/25/index.html">
 <meta property="og:site_name" content="XiaoChen">
-<meta property="og:description" content="學無止境">
+<meta property="og:description" content="C語言控制字元使用FileWriter寫入路徑設定BufferedWriter 寫入緩存區StringBuilder 字串">
 <meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2017-10-07T09:32:02.724Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XiaoChen">
-<meta name="twitter:description" content="學無止境">
+<meta name="twitter:title" content="Java學習筆記-C控制字元使用&amp;寫入文字檔">
+<meta name="twitter:description" content="C語言控制字元使用FileWriter寫入路徑設定BufferedWriter 寫入緩存區StringBuilder 字串">
   
     <link rel="alternative" href="/atom.xml" title="XiaoChen" type="application/atom+xml">
   
@@ -157,48 +159,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-25" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java學習筆記-C控制字元使用&amp;寫入文字檔
+    </h1>
+  
+
+        
+        <a href="/2017/10/07/25/" class="archive-article-date">
+  	<time datetime="2017-10-07T09:25:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-07</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+            <p>C語言控制字元使用<br>FileWriter寫入路徑設定<br>BufferedWriter 寫入緩存區<br>StringBuilder 字串<br><a id="more"></a></p>
+<div style="text-align:center;"><br><br>| 輸入格式符號 | 輸入資料型態 |<br>| ——– | ——– |<br>| %d     |  整數    |<br>| %f     | 浮點數     |<br>| %c     | 字元     |<br>| %s     | 字串     |<br>| %e     | 科學符號     |<br>| %u     | 不帶符號10進位整數 |<br>| %o     | 8進位整數 |<br>| %x     | 16進位整數 |<br><br></div>
+
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">                <span class="keyword">String</span> a = <span class="string">"%s is more important than %s."</span>;</div><div class="line">                <span class="keyword">String</span> b = <span class="string">"He who has hope has everything."</span>;</div><div class="line">                <span class="keyword">String</span> c = <span class="string">"台上 %d 分鐘，台下 %d 年功。"</span>;</div><div class="line"></div><div class="line">    System.out.<span class="built_in">println</span>(<span class="keyword">String</span>.format(a, <span class="string">"Imagination"</span>, <span class="string">"knowledge"</span>));</div><div class="line">    System.out.<span class="built_in">println</span>(<span class="keyword">String</span>.format(b, <span class="string">"everything"</span>));</div><div class="line">    System.out.<span class="built_in">println</span>(<span class="keyword">String</span>.format(c, <span class="number">1</span>, <span class="number">10</span>));</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">        <span class="built_in">int</span> i;</div><div class="line">        i = <span class="number">123</span>;</div><div class="line">        <span class="comment">// %5d 共顯示五個字元若.前面不夠會加2個空白  %d為十進位</span></div><div class="line">        <span class="keyword">String</span> <span class="built_in">str</span> = <span class="keyword">String</span>.format(<span class="string">"Number is :%5d"</span>, i);</div><div class="line">        <span class="comment">//%05d  是前面加2個0</span></div><div class="line">        <span class="keyword">String</span> str1 = <span class="keyword">String</span>.format(<span class="string">"Number is :%05d"</span>, i);</div><div class="line">        System.out.<span class="built_in">println</span>(<span class="built_in">str</span>);</div><div class="line">        System.out.<span class="built_in">println</span>(str1);</div><div class="line">        <span class="keyword">double</span> q = <span class="number">3.1415926</span>;</div><div class="line">        <span class="comment">// %後面數字8是顯示的長度.也是一個字元</span></div><div class="line">        <span class="comment">// 而.2是表示小數第二位</span></div><div class="line">        <span class="keyword">String</span> str2 = <span class="keyword">String</span>.format(<span class="string">"Double:%8.2f==="</span>, q);</div><div class="line">        System.out.<span class="built_in">println</span>(str2);</div><div class="line">        <span class="keyword">String</span> name = <span class="string">"Bob"</span>;</div><div class="line">        <span class="built_in">int</span> score = <span class="number">95</span>;</div><div class="line">        <span class="comment">//使用,後連接字串</span></div><div class="line">        System.out.<span class="built_in">println</span>(<span class="keyword">String</span>.format(<span class="string">"%s 得到 %d 分"</span>, name, score));</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">    <span class="built_in">int</span> sum = <span class="number">0</span>;</div><div class="line">    <span class="keyword">String</span> data = <span class="string">"3,6,9,12"</span>;</div><div class="line">    /將a[]陣列裡以 , 分開</div><div class="line">    <span class="keyword">String</span> a[] = data.<span class="built_in">split</span>(<span class="string">","</span>);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">String</span> s : a) &#123;</div><div class="line">        System.out.<span class="built_in">println</span>(s);</div><div class="line">        sum += Integer.valueOf(s);</div><div class="line">        &#125;</div><div class="line">    <span class="keyword">String</span> str2 = data.replace(<span class="string">","</span>, <span class="string">"+"</span>);</div><div class="line">    System.out.<span class="built_in">println</span>(str2 + <span class="string">"="</span> + sum);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">印出結果:</div><div class="line"><span class="number">3</span></div><div class="line"><span class="number">6</span></div><div class="line"><span class="number">9</span></div><div class="line"><span class="number">12</span></div><div class="line"><span class="number">3</span>+<span class="number">6</span>+<span class="number">9</span>+<span class="number">12</span>=<span class="number">30</span></div></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">    ArrayList&lt;Integer&gt; mylist = <span class="keyword">new</span> ArrayList();</div><div class="line">    <span class="keyword">int</span> input = <span class="number">0</span>;</div><div class="line">    Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">    <span class="built_in">do</span> &#123;</div><div class="line">        <span class="built_in">try</span> &#123; <span class="comment">//input使用者輸入</span></div><div class="line">            input = scanner.nextInt();</div><div class="line">            mylist.add(input);</div><div class="line">              <span class="comment">//例外處理</span></div><div class="line">            &#125; <span class="built_in">catch</span> (Exception ex) &#123;</div><div class="line">              System.out.<span class="built_in">println</span>(<span class="string">"輸入有誤"</span>);</div><div class="line">            &#125;</div><div class="line">       &#125; <span class="built_in">while</span> (input != <span class="number">0</span>);</div><div class="line">        <span class="built_in">try</span> &#123; <span class="comment">//設定t4文字檔中路徑</span></div><div class="line">            FileWriter fw = <span class="keyword">new</span> FileWriter(<span class="string">"C:\\test\\t4.txt"</span>);</div><div class="line">            <span class="comment">//寫入緩存區</span></div><div class="line">            BufferedWriter bw = <span class="keyword">new</span> BufferedWriter(fw);</div><div class="line">            <span class="comment">//建立可以容納很多字串</span></div><div class="line">            StringBuilder sb = <span class="keyword">new</span> StringBuilder();</div><div class="line">            <span class="built_in">for</span> (Integer i : mylist) &#123;</div><div class="line">                sb.append(i + <span class="string">","</span>);</div><div class="line">            &#125;</div><div class="line">            bw.<span class="built_in">write</span>(sb.toString());</div><div class="line">            bw.<span class="built_in">close</span>();</div><div class="line">            fw.<span class="built_in">close</span>();</div><div class="line">        &#125; <span class="built_in">catch</span> (IOException ex) &#123;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>2017 / 09 / </p>
+</blockquote>
+
+          
+        
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/17/05/" class="archive-article-date">
-  	<time datetime="2017-09-16T17:58:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/17/05/">Java學習筆記-習題練習</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">練習</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -211,216 +224,116 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://yuchenxiao.github.io/2017/10/07/25/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/15/04/" class="archive-article-date">
-  	<time datetime="2017-09-15T07:43:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/02/24/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java學習筆記-檔案處理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/15/04/">Java學習筆記-HTML基本練習</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/HTML//" class="article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目錄，不存在…
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/14/03/" class="archive-article-date">
-  	<time datetime="2017-09-14T07:08:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/14/03/">Java學習筆記-資料變數</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/13/02/" class="archive-article-date">
-  	<time datetime="2017-09-13T06:42:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/13/02/">Java學習筆記-迴圈練習</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/12/01/" class="archive-article-date">
-  	<time datetime="2017-09-12T04:40:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/12/01/">Java學習筆記-迴圈</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
+  
+
+  
+
   
 
 
@@ -444,8 +357,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
