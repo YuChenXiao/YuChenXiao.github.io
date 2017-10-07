@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="XiaoChen">
 <meta property="og:description" content="C語言控制字元使用FileWriter寫入路徑設定BufferedWriter 寫入緩存區StringBuilder 字串">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2017-10-07T09:32:02.724Z">
+<meta property="og:updated_time" content="2017-10-07T09:35:00.696Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java學習筆記-C控制字元使用&amp;寫入文字檔">
 <meta name="twitter:description" content="C語言控制字元使用FileWriter寫入路徑設定BufferedWriter 寫入緩存區StringBuilder 字串">
@@ -180,9 +180,50 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-            <p>C語言控制字元使用<br>FileWriter寫入路徑設定<br>BufferedWriter 寫入緩存區<br>StringBuilder 字串<br><a id="more"></a></p>
-<div style="text-align:center;"><br><br>| 輸入格式符號 | 輸入資料型態 |<br>| ——– | ——– |<br>| %d     |  整數    |<br>| %f     | 浮點數     |<br>| %c     | 字元     |<br>| %s     | 字串     |<br>| %e     | 科學符號     |<br>| %u     | 不帶符號10進位整數 |<br>| %o     | 8進位整數 |<br>| %x     | 16進位整數 |<br><br></div>
-
+            <p>C語言控制字元使用<br>FileWriter寫入路徑設定<br>BufferedWriter 寫入緩存區<br>StringBuilder 字串<br><a id="more"></a><br><!-- <div style="text-align:center;"> --></p>
+<table>
+<thead>
+<tr>
+<th>輸入格式符號</th>
+<th>輸入資料型態</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%d</td>
+<td>整數</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>浮點數</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>字元</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>字串</td>
+</tr>
+<tr>
+<td>%e</td>
+<td>科學符號</td>
+</tr>
+<tr>
+<td>%u</td>
+<td>不帶符號10進位整數</td>
+</tr>
+<tr>
+<td>%o</td>
+<td>8進位整數</td>
+</tr>
+<tr>
+<td>%x</td>
+<td>16進位整數</td>
+</tr>
+</tbody>
+</table>
+<!-- </div> -->
 <figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">                <span class="keyword">String</span> a = <span class="string">"%s is more important than %s."</span>;</div><div class="line">                <span class="keyword">String</span> b = <span class="string">"He who has hope has everything."</span>;</div><div class="line">                <span class="keyword">String</span> c = <span class="string">"台上 %d 分鐘，台下 %d 年功。"</span>;</div><div class="line"></div><div class="line">    System.out.<span class="built_in">println</span>(<span class="keyword">String</span>.format(a, <span class="string">"Imagination"</span>, <span class="string">"knowledge"</span>));</div><div class="line">    System.out.<span class="built_in">println</span>(<span class="keyword">String</span>.format(b, <span class="string">"everything"</span>));</div><div class="line">    System.out.<span class="built_in">println</span>(<span class="keyword">String</span>.format(c, <span class="number">1</span>, <span class="number">10</span>));</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <hr>
 <figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">        <span class="built_in">int</span> i;</div><div class="line">        i = <span class="number">123</span>;</div><div class="line">        <span class="comment">// %5d 共顯示五個字元若.前面不夠會加2個空白  %d為十進位</span></div><div class="line">        <span class="keyword">String</span> <span class="built_in">str</span> = <span class="keyword">String</span>.format(<span class="string">"Number is :%5d"</span>, i);</div><div class="line">        <span class="comment">//%05d  是前面加2個0</span></div><div class="line">        <span class="keyword">String</span> str1 = <span class="keyword">String</span>.format(<span class="string">"Number is :%05d"</span>, i);</div><div class="line">        System.out.<span class="built_in">println</span>(<span class="built_in">str</span>);</div><div class="line">        System.out.<span class="built_in">println</span>(str1);</div><div class="line">        <span class="keyword">double</span> q = <span class="number">3.1415926</span>;</div><div class="line">        <span class="comment">// %後面數字8是顯示的長度.也是一個字元</span></div><div class="line">        <span class="comment">// 而.2是表示小數第二位</span></div><div class="line">        <span class="keyword">String</span> str2 = <span class="keyword">String</span>.format(<span class="string">"Double:%8.2f==="</span>, q);</div><div class="line">        System.out.<span class="built_in">println</span>(str2);</div><div class="line">        <span class="keyword">String</span> name = <span class="string">"Bob"</span>;</div><div class="line">        <span class="built_in">int</span> score = <span class="number">95</span>;</div><div class="line">        <span class="comment">//使用,後連接字串</span></div><div class="line">        System.out.<span class="built_in">println</span>(<span class="keyword">String</span>.format(<span class="string">"%s 得到 %d 分"</span>, name, score));</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
