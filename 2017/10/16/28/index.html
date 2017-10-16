@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yuchenxiao.github.io">
-  <title>Archives: 2017/9 | XiaoChen</title>
+  <title>MySQL基本語法 | XiaoChen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="學無止境">
-<meta property="og:type" content="website">
-<meta property="og:title" content="XiaoChen">
-<meta property="og:url" content="https://yuchenxiao.github.io/archives/2017/09/index.html">
+  <meta name="description" content="MySQ語法">
+<meta name="keywords" content="筆記,練習">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL基本語法">
+<meta property="og:url" content="https://yuchenxiao.github.io/2017/10/16/28/index.html">
 <meta property="og:site_name" content="XiaoChen">
-<meta property="og:description" content="學無止境">
+<meta property="og:description" content="MySQ語法">
 <meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2017-10-16T14:09:31.764Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XiaoChen">
-<meta name="twitter:description" content="學無止境">
+<meta name="twitter:title" content="MySQL基本語法">
+<meta name="twitter:description" content="MySQ語法">
   
     <link rel="alternative" href="/atom.xml" title="XiaoChen" type="application/atom+xml">
   
@@ -157,36 +159,72 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-28" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MySQL基本語法
+    </h1>
+  
+
+        
+        <a href="/2017/10/16/28/" class="archive-article-date">
+  	<time datetime="2017-10-16T13:54:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+            <p>MySQ語法<br><a id="more"></a><br>1016 </p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="symbol">`students`</span> <span class="keyword">WHERE</span><span class="symbol">`students`</span>.<span class="symbol">`cSex`</span> = <span class="string">'M'</span></div></pre></td></tr></table></figure>
+<p> ↳顯示資料中的男生<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">`<span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="symbol">`students`</span>.<span class="symbol">`cSex`</span> <span class="keyword">FROM</span> <span class="symbol">`students`</span></div></pre></td></tr></table></figure></p>
+<p>↳顯示性別中的選項<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="symbol">`students`</span>.<span class="symbol">`cID`</span> <span class="keyword">AS</span> <span class="symbol">`編號`</span> <span class="keyword">FROM</span> <span class="symbol">`students`</span></div></pre></td></tr></table></figure></p>
+<p>↳把資料ID轉換中文<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="symbol">`students`</span><span class="keyword">WHERE</span><span class="symbol">`students`</span>.<span class="symbol">`cID`</span>&gt;<span class="number">5</span> <span class="keyword">AND</span> <span class="symbol">`students`</span>.<span class="symbol">`cSex`</span> =<span class="string">'M'</span></div></pre></td></tr></table></figure></p>
+<p>↳選擇做號大於5的男性<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="symbol">`students`</span> <span class="keyword">WHERE</span> !(<span class="symbol">`students`</span>.<span class="symbol">`cID`</span>&gt;<span class="number">5</span> <span class="keyword">AND</span> <span class="symbol">`students`</span>.<span class="symbol">`cSex`</span>=<span class="string">'M'</span>)</div></pre></td></tr></table></figure></p>
+<p>↳選擇做號大於5的男性以外的人<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="symbol">`students`</span> <span class="keyword">WHERE</span> !(<span class="symbol">`students`</span>.<span class="symbol">`cID`</span>&gt;<span class="number">5</span>)<span class="keyword">AND</span> <span class="symbol">`students`</span>.<span class="symbol">`cSex`</span>=<span class="string">'M'</span></div></pre></td></tr></table></figure></p>
+<p>↳選擇不大於5的男性<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="symbol">`students`</span> <span class="keyword">WHERE</span> <span class="symbol">`students`</span>.<span class="symbol">`cID`</span>&gt;=<span class="number">4</span> <span class="keyword">AND</span> <span class="symbol">`students`</span>.<span class="symbol">`cID`</span>&lt;=<span class="number">6</span></div></pre></td></tr></table></figure></p>
+<p>↳大於等於4 小於等於6<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="symbol">`students`</span> <span class="keyword">WHERE</span> <span class="symbol">`students`</span>.<span class="symbol">`cBirthday`</span> <span class="keyword">BETWEEN</span> <span class="string">'1987-01-01'</span> <span class="keyword">AND</span> <span class="string">'1988-12-31'</span></div></pre></td></tr></table></figure></p>
+<p>↳找尋生日在1987-1988之間的人<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="symbol">`students`</span> <span class="keyword">WHERE</span> <span class="symbol">`students`</span>.<span class="symbol">`cID`</span> <span class="keyword">IN</span>(<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>)</div></pre></td></tr></table></figure></p>
+<p>↳選擇座號13579<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="symbol">`students`</span> <span class="keyword">WHERE</span> <span class="symbol">`students`</span>.<span class="symbol">`cPhone`</span><span class="keyword">LIKE</span> <span class="string">'0918%'</span></div></pre></td></tr></table></figure></p>
+<p>↳電話前面為0918  LIKE萬用字元<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="symbol">`students`</span> <span class="keyword">WHERE</span> <span class="symbol">`students`</span>.<span class="symbol">`cAddr`</span><span class="keyword">LIKE</span> <span class="string">'台北市%'</span></div></pre></td></tr></table></figure></p>
+<p>↳地址為台北市的人<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="symbol">`students`</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="symbol">`students`</span>.<span class="symbol">`cBirthday`</span> <span class="keyword">DESC</span></div></pre></td></tr></table></figure></p>
+<p>↳生日年份遞減<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="symbol">`students`</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="symbol">`students`</span>.<span class="symbol">`cSex`</span> <span class="keyword">ASC</span>,<span class="symbol">`students`</span>.<span class="symbol">`cBirthday`</span> <span class="keyword">DESC</span></div></pre></td></tr></table></figure></p>
+<p>↳先用性別ASC遞增  再用生日遞減<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="symbol">`students`</span> <span class="keyword">LIMIT</span> <span class="number">2</span>,<span class="number">3</span></div></pre></td></tr></table></figure></p>
+<p>↳從2開始(不包含2)  顯示3筆<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="symbol">`students`</span>.<span class="symbol">`cID`</span><span class="keyword">AS</span> <span class="string">'座號'</span> ,<span class="symbol">`students`</span>.<span class="symbol">`cName`</span><span class="keyword">AS</span> <span class="string">'姓名'</span>, <span class="symbol">`students`</span>.<span class="symbol">`cHeight`</span><span class="keyword">AS</span> <span class="string">'身高'</span>,<span class="symbol">`students`</span>.<span class="symbol">`cWeight`</span><span class="keyword">AS</span><span class="string">'體重'</span>,(<span class="symbol">`students`</span>.<span class="symbol">`cHeight`</span><span class="number">-70</span>)*<span class="number">0.6</span> <span class="keyword">AS</span><span class="string">'標準體重'</span>,<span class="symbol">`students`</span>.<span class="symbol">`cWeight`</span>-(<span class="symbol">`students`</span>.<span class="symbol">`cHeight`</span><span class="number">-70</span>)*<span class="number">0.6</span> <span class="keyword">AS</span> <span class="string">'差距'</span> <span class="keyword">FROM</span> <span class="symbol">`students`</span></div></pre></td></tr></table></figure></p>
+<p>↳計算標準體重和真實的差具<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="symbol">`S`</span>.<span class="symbol">`cID`</span><span class="keyword">AS</span> <span class="string">'座號'</span> ,<span class="symbol">`S`</span>.<span class="symbol">`cName`</span><span class="keyword">AS</span> <span class="string">'姓名'</span>, <span class="symbol">`S`</span>.<span class="symbol">`cHeight`</span><span class="keyword">AS</span> <span class="string">'身高'</span>,<span class="symbol">`S`</span>.<span class="symbol">`cWeight`</span><span class="keyword">AS</span><span class="string">'體重'</span>,(<span class="symbol">`S`</span>.<span class="symbol">`cHeight`</span><span class="number">-70</span>)*<span class="number">0.6</span> <span class="keyword">AS</span><span class="string">'標準體重'</span>,<span class="symbol">`S`</span>.<span class="symbol">`cWeight`</span>-(<span class="symbol">`S`</span>.<span class="symbol">`cHeight`</span><span class="number">-70</span>)*<span class="number">0.6</span> <span class="keyword">AS</span> <span class="string">'差距'</span> <span class="keyword">FROM</span> <span class="symbol">`students`</span> <span class="keyword">AS</span> S;</div></pre></td></tr></table></figure></p>
+<p>↳用 AS S　將students　取別名<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="symbol">`students`</span>.<span class="symbol">`cID`</span><span class="keyword">AS</span><span class="string">'座號'</span>,<span class="symbol">`students`</span>.<span class="symbol">`cName`</span><span class="keyword">AS</span><span class="string">'姓名'</span>,<span class="symbol">`students`</span>.<span class="symbol">`cHeight`</span><span class="keyword">AS</span><span class="string">'身高'</span>,<span class="symbol">`students`</span>.<span class="symbol">`cWeight`</span><span class="keyword">AS</span><span class="string">'體重'</span>,<span class="built_in">ROUND</span>(<span class="symbol">`students`</span>.<span class="symbol">`cWeight`</span>/POW(<span class="symbol">`students`</span>.<span class="symbol">`cHeight`</span>/<span class="number">100</span>,<span class="number">2</span>),<span class="number">2</span>)<span class="keyword">AS</span> <span class="string">'BMI'</span> <span class="keyword">FROM</span> <span class="symbol">`students`</span></div></pre></td></tr></table></figure></p>
+<p>↳ROUND() 函數用來對數值欄位值進行四捨五入計算。<br>計算ＢＭＩ<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="symbol">`students`</span>.<span class="symbol">`cID`</span><span class="keyword">AS</span><span class="string">'座號'</span>,<span class="symbol">`students`</span>.<span class="symbol">`cName`</span><span class="keyword">AS</span><span class="string">'姓名'</span>,<span class="symbol">`students`</span>.<span class="symbol">`cHeight`</span><span class="keyword">AS</span><span class="string">'身高'</span>,<span class="symbol">`students`</span>.<span class="symbol">`cWeight`</span><span class="keyword">AS</span><span class="string">'體重'</span>,<span class="built_in">ROUND</span>(<span class="symbol">`students`</span>.<span class="symbol">`cWeight`</span>/POW(<span class="symbol">`students`</span>.<span class="symbol">`cHeight`</span>/<span class="number">100</span>,<span class="number">2</span>),<span class="number">2</span>)<span class="keyword">AS</span> <span class="string">'BMI'</span> <span class="keyword">FROM</span> <span class="symbol">`students`</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="symbol">`BMI`</span> <span class="keyword">DESC</span></div></pre></td></tr></table></figure></p>
+<p>↳利用ＢＭＩ排序<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="symbol">`students`</span>.<span class="symbol">`cID`</span><span class="keyword">AS</span><span class="string">'座號'</span>,<span class="symbol">`students`</span>.<span class="symbol">`cName`</span><span class="keyword">AS</span><span class="string">'姓名'</span>,<span class="symbol">`students`</span>.<span class="symbol">`cHeight`</span><span class="keyword">AS</span><span class="string">'身高'</span>,<span class="symbol">`students`</span>.<span class="symbol">`cWeight`</span><span class="keyword">AS</span><span class="string">'體重'</span>,<span class="built_in">ROUND</span>(<span class="symbol">`students`</span>.<span class="symbol">`cWeight`</span>/POW(<span class="symbol">`students`</span>.<span class="symbol">`cHeight`</span>/<span class="number">100</span>,<span class="number">2</span>),<span class="number">2</span>)<span class="keyword">AS</span> <span class="string">'BMI'</span> <span class="keyword">FROM</span> <span class="symbol">`students`</span> <span class="keyword">WHERE</span> <span class="built_in">ROUND</span></div><div class="line">(<span class="symbol">`students`</span>.<span class="symbol">`cWeight`</span>/POW(<span class="symbol">`students`</span>.<span class="symbol">`cHeight`</span>/<span class="number">100</span>,<span class="number">2</span>),<span class="number">2</span>)&lt;<span class="number">18.5</span> <span class="keyword">OR</span> <span class="built_in">ROUND</span>(<span class="symbol">`students`</span>.<span class="symbol">`cWeight`</span>/POW(<span class="symbol">`students`</span>.<span class="symbol">`cHeight`</span>/<span class="number">100</span>,<span class="number">2</span>),<span class="number">2</span>)&gt;=<span class="number">24</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> BMI <span class="keyword">DESC</span></div></pre></td></tr></table></figure></p>
+<p>↳選擇BMI 18.5~24 用DESC排序<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="symbol">`students`</span>.<span class="symbol">`cID`</span><span class="keyword">AS</span><span class="string">'座號'</span>,<span class="symbol">`students`</span>.<span class="symbol">`cName`</span><span class="keyword">AS</span><span class="string">'姓名'</span>,<span class="symbol">`students`</span>.<span class="symbol">`cHeight`</span><span class="keyword">AS</span><span class="string">'身高'</span>,<span class="symbol">`students`</span>.<span class="symbol">`cWeight`</span><span class="keyword">AS</span><span class="string">'體重'</span>,<span class="built_in">ROUND</span>(<span class="symbol">`students`</span>.<span class="symbol">`cWeight`</span>/POW(<span class="symbol">`students`</span>.<span class="symbol">`cHeight`</span>/<span class="number">100</span>,<span class="number">2</span>),<span class="number">2</span>)<span class="keyword">AS</span> <span class="string">'BMI'</span> <span class="keyword">FROM</span> <span class="symbol">`students`</span>) <span class="keyword">AS</span> T <span class="keyword">WHERE</span> T.BMI&lt;<span class="number">18.5</span> <span class="keyword">OR</span> T.BMI&gt;=<span class="number">24</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> T.BMI <span class="keyword">DESC</span></div></pre></td></tr></table></figure></p>
+<p>↳另一種寫法</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="symbol">`students`</span> <span class="keyword">WHERE</span> DAYNAME(<span class="symbol">`students`</span>.<span class="symbol">`cBirthday`</span>)=<span class="string">'Tuesday'</span></div></pre></td></tr></table></figure>
+<p>↳調出生日為星期二的人<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="symbol">`students`</span> <span class="keyword">WHERE</span> YEAR(NOW())-YEAR(<span class="symbol">`students`</span>.<span class="symbol">`cBirthday`</span>)&gt;<span class="number">20</span></div></pre></td></tr></table></figure></p>
+<p>↳調出滿20歲的人<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> (<span class="keyword">SELECT</span><span class="symbol">`students`</span>.<span class="symbol">`cName`</span>,<span class="symbol">`students`</span>.<span class="symbol">`cBirthday`</span>,YEAR(NOW())-YEAR(<span class="symbol">`students`</span>.<span class="symbol">`cBirthday`</span>) <span class="keyword">AS</span> <span class="string">'AGE'</span> <span class="keyword">FROM</span> <span class="symbol">`students`</span>)<span class="keyword">AS</span> T <span class="keyword">WHERE</span> T.AGE&gt;=<span class="number">30</span></div></pre></td></tr></table></figure></p>
+<p>↳建立AGE欄位 再列出30以上的人<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="symbol">`students`</span>.<span class="symbol">`cName`</span>,<span class="symbol">`students`</span>.<span class="symbol">`cBirthday`</span>,TIMESTAMPDIFF(YEAR,<span class="symbol">`students`</span>.<span class="symbol">`cBirthday`</span>,NOW())<span class="keyword">AS</span> <span class="string">'AGE'</span> <span class="keyword">FROM</span> <span class="symbol">`students`</span>)<span class="keyword">AS</span> T <span class="keyword">WHERE</span> T.AGE&gt;=<span class="number">30</span></div></pre></td></tr></table></figure></p>
+<p>↳另一種更詳細 </p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(<span class="symbol">`scorelist`</span>.<span class="symbol">`score`</span>)<span class="keyword">FROM</span><span class="symbol">`scorelist`</span></div></pre></td></tr></table></figure>
+<p>↳全部分數總分<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(<span class="symbol">`scorelist`</span>.<span class="symbol">`score`</span>)<span class="keyword">FROM</span><span class="symbol">`scorelist`</span> <span class="keyword">WHERE</span><span class="symbol">`scorelist`</span>.<span class="symbol">`course`</span>=<span class="string">'國文'</span></div></pre></td></tr></table></figure></p>
+<p>↳國文總成績<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="built_in">AVG</span>(<span class="symbol">`scorelist`</span>.<span class="symbol">`score`</span>)<span class="keyword">FROM</span> <span class="symbol">`scorelist`</span> <span class="keyword">WHERE</span> <span class="symbol">`scorelist`</span>.<span class="symbol">`course`</span>=<span class="string">'國文'</span></div></pre></td></tr></table></figure></p>
+<p>↳國文平均<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="symbol">`scorelist`</span>.<span class="symbol">`cID`</span>) <span class="keyword">FROM</span> <span class="symbol">`scorelist`</span></div></pre></td></tr></table></figure></p>
+<p>↳用cID 來計算人數<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="built_in">MAX</span>(<span class="symbol">`scorelist`</span>.<span class="symbol">`score`</span>) <span class="keyword">FROM</span> <span class="symbol">`scorelist`</span> <span class="keyword">WHERE</span> <span class="symbol">`scorelist`</span>.<span class="symbol">`course`</span>=<span class="string">'國文'</span></div></pre></td></tr></table></figure></p>
+<p>↳國文最高分<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="symbol">`scorelist`</span>.<span class="symbol">`cID`</span>,<span class="built_in">SUM</span>(<span class="symbol">`scorelist`</span>.<span class="symbol">`score`</span>)<span class="keyword">FROM</span> <span class="symbol">`scorelist`</span> <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="symbol">`scorelist`</span>.<span class="symbol">`cID`</span></div></pre></td></tr></table></figure></p>
+<p>↳用GROUP BY 以id加總各分數<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="symbol">`scorelist`</span>.<span class="symbol">`cID`</span>,<span class="symbol">`students`</span>.<span class="symbol">`cName`</span>,<span class="symbol">`students`</span>.<span class="symbol">`cSex`</span>,<span class="symbol">`scorelist`</span>.<span class="symbol">`score`</span> <span class="keyword">FROM</span><span class="symbol">`scorelist`</span>,<span class="symbol">`students`</span> <span class="keyword">WHERE</span> <span class="symbol">`scorelist`</span>.<span class="symbol">`cID`</span>=<span class="symbol">`students`</span>.<span class="symbol">`cID`</span> <span class="keyword">AND</span> <span class="symbol">`scorelist`</span>.<span class="symbol">`course`</span> =<span class="string">'國文'</span></div></pre></td></tr></table></figure></p>
+<p>↳用cID做連結2個資料並顯示出國文成績姓名</p>
+<blockquote>
+<p>2017 / 10 / 16</p>
+</blockquote>
+
+          
+        
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/30/23/" class="archive-article-date">
-  	<time datetime="2017-09-30T03:53:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/30/23/">Java學習筆記-多重執行緒</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -202,502 +240,129 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
+        			<a href="/categories/MySQL//" class="article-tag-list-link color1">MySQL</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://yuchenxiao.github.io/2017/10/16/28/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/29/21/" class="archive-article-date">
-  	<time datetime="2017-09-29T12:40:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-29</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/11/27/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java學習筆記-導覽畫面</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/29/21/">HTML表單選項語法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">練習</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/HTML//" class="article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目錄，不存在…
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/28/22/" class="archive-article-date">
-  	<time datetime="2017-09-28T12:55:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/28/22/">Android studio習題</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/27/20/" class="archive-article-date">
-  	<time datetime="2017-09-27T13:44:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/27/20/">Android studio 錯誤問題 和 解決方式</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/27/19/" class="archive-article-date">
-  	<time datetime="2017-09-27T13:40:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/27/19/">BMI計算機重整(全)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">UI</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/26/18/" class="archive-article-date">
-  	<time datetime="2017-09-26T15:25:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/26/18/">Java學習筆記-陣列排序/比較類別/例外處裡類別/匿名內部類別</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/25/17/" class="archive-article-date">
-  	<time datetime="2017-09-25T15:56:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/25/17/">Java學習筆記-二維陣列/繼承/抽象</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/25/16/" class="archive-article-date">
-  	<time datetime="2017-09-25T14:38:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/25/16/">BMI計算器實作三</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">練習</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/25/15/" class="archive-article-date">
-  	<time datetime="2017-09-25T13:41:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/25/15/">BMI計算器實作二</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">練習</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/24/14/" class="archive-article-date">
-  	<time datetime="2017-09-24T14:22:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/24/14/">android studio-BMI計算器實作一</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">練習</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">實作</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2017/09/page/2/">2</a><a class="page-number" href="/archives/2017/09/page/3/">3</a><a class="extend next" rel="next" href="/archives/2017/09/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -721,8 +386,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
